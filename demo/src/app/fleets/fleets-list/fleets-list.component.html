@@ -1,0 +1,35 @@
+<table *ngIf="fleets.length">
+    <tr>
+        <th>Fleet Name</th>
+        <th>Description</th>
+        <th>Fleet Size</th>
+        <th>Plant Count</th>
+    </tr>
+    <tr *ngFor="let fleet of fleets">
+        <td>{{fleet.name}}</td>
+        <td>{{fleet.description}}</td>
+        <td>{{fleet.fleetSize}}</td>
+        <td>{{fleet.plantCount}}</td>
+    </tr>
+</table>
+
+<br/>
+
+<table *ngIf="fleets$ | async as asyncFleets; else loading">
+    <tr>
+        <th>Fleet Name</th>
+        <th>Description</th>
+        <th>Fleet Size</th>
+        <th>Plant Count</th>
+    </tr>
+    <tr *ngFor="let fleet of asyncFleets">
+        <td>{{fleet.name}}</td>
+        <td>{{fleet.description}}</td>
+        <td>{{fleet.fleetSize}}</td>
+        <td>{{fleet.plantCount}}</td>
+    </tr>
+</table>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>
