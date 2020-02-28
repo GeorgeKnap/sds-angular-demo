@@ -24,10 +24,10 @@ export class FleetsListComponent implements OnInit {
   ngOnInit(): void {
     this.fleets$ = this.apiService.getFleetCollection({ page: 1 });
 
-    this.apiService.getFleetCollection({ page: 1 }).subscribe(fleets => {
-      this.fleets = fleets;
-      this.cd.markForCheck();
-    });
+    // this.apiService.getFleetCollection({ page: 1 }).subscribe(fleets => {
+    //   this.fleets = fleets;
+    //   this.cd.markForCheck();
+    // });
   }
 
 }
